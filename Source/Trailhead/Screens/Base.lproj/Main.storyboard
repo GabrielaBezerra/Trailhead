@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" id="BYZ-38-t0r" customClass="HomeViewController" customModule="TheArchitecture" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App State:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22m-R1-vXa">
+                                <rect key="frame" x="20" y="61" width="106" height="27"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PEW-Th-JYT">
+                                <rect key="frame" x="20" y="151.5" width="374" height="301.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <mutableString key="text">EULA Text:
+
+Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNo-iN-XKI">
+                                <rect key="frame" x="309" y="461" width="85" height="44"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
+                                <state key="normal" title="Accept"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="td9-SW-XmV">
+                                <rect key="frame" x="20" y="468" width="52" height="30"/>
+                                <state key="normal" title="Decline"/>
+                                <connections>
+                                    <action selector="declineEULA:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hRr-iR-B8Q"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EULA Accepted: No" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqz-Wz-fPY">
+                                <rect key="frame" x="20" y="104" width="165" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.2784313725" green="1" blue="0.57191780820000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="BNo-iN-XKI" firstAttribute="trailing" secondItem="PEW-Th-JYT" secondAttribute="trailing" id="3u5-le-rUN"/>
+                            <constraint firstItem="22m-R1-vXa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="4M4-HF-XJI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="centerY" secondItem="PEW-Th-JYT" secondAttribute="bottom" id="B4U-Ht-9no"/>
+                            <constraint firstItem="hqz-Wz-fPY" firstAttribute="top" secondItem="22m-R1-vXa" secondAttribute="bottom" constant="16" id="SdX-78-BND"/>
+                            <constraint firstItem="hqz-Wz-fPY" firstAttribute="leading" secondItem="22m-R1-vXa" secondAttribute="leading" id="T3e-um-3fs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="22m-R1-vXa" secondAttribute="trailing" symbolic="YES" id="VxR-3D-1gT"/>
+                            <constraint firstItem="BNo-iN-XKI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="td9-SW-XmV" secondAttribute="trailing" constant="16" id="WPj-GG-4VC"/>
+                            <constraint firstItem="PEW-Th-JYT" firstAttribute="top" secondItem="hqz-Wz-fPY" secondAttribute="bottom" constant="26" id="Y8N-RM-SZ2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hqz-Wz-fPY" secondAttribute="trailing" symbolic="YES" id="ZH4-hf-HoX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PEW-Th-JYT" secondAttribute="trailing" constant="20" id="aPX-Cx-m5A"/>
+                            <constraint firstItem="22m-R1-vXa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="17" id="b0i-bL-JiT"/>
+                            <constraint firstItem="td9-SW-XmV" firstAttribute="centerY" secondItem="BNo-iN-XKI" secondAttribute="centerY" id="cUB-0t-w50"/>
+                            <constraint firstItem="PEW-Th-JYT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="kU9-rw-6oF"/>
+                            <constraint firstItem="BNo-iN-XKI" firstAttribute="top" secondItem="PEW-Th-JYT" secondAttribute="bottom" constant="8" id="mC1-zm-sZz"/>
+                            <constraint firstItem="PEW-Th-JYT" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="tJV-Ec-y68"/>
+                            <constraint firstItem="td9-SW-XmV" firstAttribute="leading" secondItem="PEW-Th-JYT" secondAttribute="leading" id="yvM-Ji-QIv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Msu-kk-3JC"/>
+                    <connections>
+                        <outlet property="acceptButton" destination="BNo-iN-XKI" id="G5S-aK-5o5"/>
+                        <outlet property="appStateLabel" destination="22m-R1-vXa" id="7Gj-Sv-ZSp"/>
+                        <outlet property="declineButton" destination="td9-SW-XmV" id="1d2-ea-qV4"/>
+                        <outlet property="eulaAcceptedLabel" destination="hqz-Wz-fPY" id="OG9-b2-52r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-959.4202898550725" y="-38.169642857142854"/>
+        </scene>
+    </scenes>
+</document>
