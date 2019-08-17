@@ -13,6 +13,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let dependencyManager = DependencyManager()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        // Don't run UI if unit testing:
+        if NSClassFromString("XCTest") != nil {
+            return true
+        }
 
         window = UIWindow() // Assign to AppDelegate to ensure Window doesn't go away.
 

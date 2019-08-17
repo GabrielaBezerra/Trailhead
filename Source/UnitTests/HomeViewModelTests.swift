@@ -25,25 +25,17 @@ class HomeViewModelTests: XCTestCase {
         XCTAssertEqual(homeViewModel.screenTitle.value, "Home")
     }
 
-    func testSetTitle() {
-        let testTitle = "Test Title"
-        let homeViewModel = HomeViewModel()
-        homeViewModel.setTitle(to: testTitle)
-
-        XCTAssertEqual(homeViewModel.screenTitle.value, testTitle)
-    }
-
-    func testInitializedUpdatesAppData() {
+    func testEULAAcceptedUpdatesAppData() {
         let homeViewModel = HomeViewModel()
         // Set appData manually to avoid dependency manager entanglements at this point.
         homeViewModel.appData = AppData()
-        XCTAssertFalse(homeViewModel.appData.isInitialized.value)
+        XCTAssertFalse(homeViewModel.appData.eulaAccepted.value)
 
-        homeViewModel.initialized(true)
-        XCTAssertTrue(homeViewModel.appData.isInitialized.value)
+        homeViewModel.eulaAccepted(true)
+        XCTAssertTrue(homeViewModel.appData.eulaAccepted.value)
 
-        homeViewModel.initialized(false)
-        XCTAssertFalse(homeViewModel.appData.isInitialized.value)
+        homeViewModel.eulaAccepted(false)
+        XCTAssertFalse(homeViewModel.appData.eulaAccepted.value)
     }
 
     // MARK: - Test Rx bits

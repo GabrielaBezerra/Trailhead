@@ -4,6 +4,7 @@
 
 import UIKit
 
+/// Coordinator Protocol
 protocol Coordinator: AppStatusInjectable, AppDataInjectable {
     var childCoordinator: Coordinator? { get set }
     var delegate: CoordinatorDelegate? { get set }
@@ -12,10 +13,10 @@ protocol Coordinator: AppStatusInjectable, AppDataInjectable {
     init(navigationController: UINavigationController)
 
     func start()
-    func moveToNext()
     func finish()
 }
 
+/// CoordinatorDelegate protocol
 protocol CoordinatorDelegate {
     /// Designate to parent coordinator (usually) that flow has been finished
     ///
@@ -24,7 +25,7 @@ protocol CoordinatorDelegate {
     ///     Used so that parent can have many child coordinators and one flowFinished
     ///     handler.
     ///   - nextScreen: requested next screen if any.
-    func finished(_ coordinator: Coordinator, nextScreen: NextScreen?)
+    func finished(_ coordinator: Coordinator, nextScreen: Screen?)
 }
 
 extension Coordinator {

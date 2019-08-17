@@ -1,9 +1,12 @@
 //
 //  Copyright © 2019 Matt Whitlock All rights reserved.
 //
-
-/// Next screen to move to after ending a coordinator via finished()
-enum NextScreen {
+import UIKit
+/// Represent all screens in an app.
+///
+/// Often used by Coordinators to represent next screen
+/// to move to after ending a coordinator via finished()
+enum Screen {
     case onboarding
     case home
 }
@@ -14,3 +17,7 @@ enum NextScreen {
 
 // Also would be good to have declarative way to determine whether to show
 // NavigationBar or not.
+
+protocol NavBarHandler {
+    var showNavigationBar: Bool { get }
+}

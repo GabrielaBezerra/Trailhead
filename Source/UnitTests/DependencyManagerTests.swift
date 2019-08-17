@@ -20,14 +20,13 @@ class DependencyManagerTests: XCTestCase {
 
     func testDependencyManagerDefaultConstructor() {
         let dependencyManager = DependencyManager()
-        let test = TestInjectableClass()
 
-        dependencyManager.inject(test)
+        // Testing that the dependency manager constructor works
     }
 
     func testDependencyManagerWithAppStatusMock() {
         let appStatusMock = AppStatusMock()
-        appStatusMock.appState = .error
+        appStatusMock.appState.accept(.error)
         appStatusMock.bleConnected.accept(true)
 
         let dependencyManager = DependencyManager(appStatus: appStatusMock)
@@ -37,8 +36,20 @@ class DependencyManagerTests: XCTestCase {
         // Ensure injected mock class:
         XCTAssert(test.appStatus! is AppStatusMock)
 
-        XCTAssertEqual(test.appStatus.appState, .error)
+        XCTAssertEqual(test.appStatus.appState.value, .error)
         XCTAssertTrue(test.appStatus.bleConnected.value)
     }
 
+    func testDependencyManagerInjectSelf() {
+        /// Class only used for this test.
+        class testDependencyManagerClass: DependencyManagerInjectable {
+            var dependencyManager: DependencyManager!
+        }
+        
+        let dependencyManager = DependencyManager()
+        let test = testDependencyManagerClass()
+        dependencyManager.inject(test)
+        
+        XCTAssert(test.dependencyManager === dependencyManager)
+    }
 }

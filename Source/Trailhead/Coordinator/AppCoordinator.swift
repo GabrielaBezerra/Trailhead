@@ -4,6 +4,7 @@
 
 import UIKit
 
+/// Implements `Coordinator` protocol and is responsible for the overall app coordinator functionality.
 class AppCoordinator: Coordinator, AppStatusInjectable, AppDataInjectable, DependencyManagerInjectable {
     var childCoordinator: Coordinator? = nil
     var delegate: CoordinatorDelegate? = nil
@@ -29,10 +30,6 @@ class AppCoordinator: Coordinator, AppStatusInjectable, AppDataInjectable, Depen
         moveToHomeViewController()
     }
 
-    func moveToNext() {
-
-    }
-
     func finish() {
         childCoordinator = nil
     }
@@ -43,7 +40,6 @@ class AppCoordinator: Coordinator, AppStatusInjectable, AppDataInjectable, Depen
 extension AppCoordinator: HomeNavigationDelegate {
 
 }
-
 
 // MARK: - View controller instantiation logic
 // Using separate functions to allow reuse and single place to handle all dependency injection
