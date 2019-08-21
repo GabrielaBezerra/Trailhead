@@ -4,22 +4,18 @@ language: swift
 xcode_project: Source/Trailhead.xcodeproj
 xcode_scheme: Trailhead
 xcode_destination: platform=iOS Simulator, OS=12.4, name=iPhone XR
-
 cache:
   directories:
   - Source/Carthage
-
 addons:
   homebrew:
     packages:
-      - carthage
-      #update: true #if needed
-
+    - carthage
 before_script: cd Source
-
-# FIXME: install carthage directly rather than using brew.
 before_install:
-  - cd Source
-  - carthage update --cache-builds
-  - carthage bootstrap --platform iOS --verbose --no-use-binaries --platform iOS --cache-builds
-
+- cd Source
+- carthage update --cache-builds
+- carthage bootstrap --platform iOS --verbose --no-use-binaries --platform iOS --cache-builds
+env:
+  global:
+    secure: cMB8eztpFBlSz4zMGUp5YTHbEXuD87/ecrUBhP6jaw9PUQBZhCAo8PTrWcWCKC4Lyr9SYnhWYKZbI3C3ML+wlrr9NOVDm3pgJVu+lmu5Ld/pwKULDnf3riyiddUJ3EqNUJFS7zYUQMjtrf2DcjnlZR/BRxVX8HF0JTJjumg3GcqsHF6h6AW0WsxIeLsU3Ij8GhcR4eYAIxNugozTGfC1J7uYReB/cFInHDB1+2pR27R/v/A6yEUrNr68v9a3ua7NAJzdC0bMQNFjCemfcO+B588x2vlPh+tIhr2N9KulZ9dVA6uQuryjP0TYCwHYBsdG9wdz7nR6/Gn76COAO6vXAlcCYJ5grmDM+zMOlyVGnaT8+g72cuF4o80df/IhhfEbh3C8sbFYCSczKAmH5H6MwjzjxqdcA2lGpkbGD2x6SpzNPPhdZLhFQXR2/t84ojuMXxzRHKRIH+fui7AfK4+rp/s1iTZWK4yJEhEudVzuxBOul6oRd/WgKLGR5U596IV4mjMpRPPch82PvrZVIrrGFbJLnfB/Zwe8vQAXNo3R8AuhB6WzUTZL20d/drdoM8tZJn1nTSVPz3tnd9GENOZEiHWJOpMqpZqxee02sRSF00JhY4KGUTY/NtvMSwiQ2sMhlzUVrEvJmHFjKIYDHjFHz4rL/vwArhSmDimMawCouTI=
