@@ -20,6 +20,17 @@ before_install:
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+  - gem install jazzy
+  - cd ../Documentation
+  - ./gendocs_jazzy.sh
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  keep-history: true
+  local-dir: Documentation/Jazzy
+  on:
+    branch: develop
 
 env:
   global:
