@@ -1,0 +1,22 @@
+os: osx
+osx_image: xcode10.3
+language: swift
+xcode_project: Source/Trailhead.xcodeproj
+xcode_scheme: Trailhead
+xcode_destination: platform=iOS Simulator, OS=12.4, name=iPhone XR
+
+cache:
+  directories:
+  - Carthage
+
+addons:
+  homebrew:
+    packages:
+      - carthage
+      #update: true #if needed
+
+# FIXME: install carthage directly rather than using brew.
+before_install:
+  - carthage update --cache-builds
+  - carthage bootstrap --platform iOS --verbose --no-use-binaries --platform iOS --cache-builds
+
