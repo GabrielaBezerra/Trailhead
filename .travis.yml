@@ -29,8 +29,8 @@ deploy:
   skip-cleanup: true
   keep-history: true
   local-dir: Documentation/Jazzy
-  on:
-    branch: develop
+#  on:
+#    branch: develop
 
 env:
   global:

@@ -1,7 +1,7 @@
-cd ../Source
+cd Source
 jazzy --clean \
   --exclude=Carthage/*,build/* \
   --min-acl private \
-  --output ../Documentation/Jazzy \
+  --output ../Documentation \
   --theme fullwidth \
-  --documentation=../Documentation/*.md
+  --documentation=../*.md
