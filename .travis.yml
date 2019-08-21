@@ -1,12 +1,12 @@
 os: osx
 osx_image: xcode10.3
 language: swift
-xcode_project: Source/Trailhead.xcodeproj
+xcode_project: Trailhead.xcodeproj
 xcode_scheme: Trailhead
 xcode_destination: platform=iOS Simulator,OS=12.4,name=iPhone Xʀ
 cache:
   directories:
-  - Source/Carthage
+  - Carthage
 addons:
   homebrew:
     packages:
