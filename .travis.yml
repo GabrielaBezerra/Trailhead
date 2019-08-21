@@ -19,6 +19,7 @@ before_script: cd Source
 
 # FIXME: install carthage directly rather than using brew.
 before_install:
+  - cd Source
   - carthage update --cache-builds
   - carthage bootstrap --platform iOS --verbose --no-use-binaries --platform iOS --cache-builds
 
