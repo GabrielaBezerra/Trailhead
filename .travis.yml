@@ -1,0 +1,27 @@
+os: osx
+osx_image: xcode10.3
+language: swift
+xcode_project: Trailhead.xcodeproj
+xcode_scheme: Trailhead
+xcode_destination: platform=iOS Simulator,OS=12.4,name=iPhone Xʀ
+cache:
+  directories:
+  - Carthage
+
+addons:
+  homebrew:
+    packages:
+    - carthage
+
+before_install:
+- cd Source
+- carthage update --cache-builds
+- carthage bootstrap --platform iOS --verbose --no-use-binaries --cache-builds
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
+env:
+  global:
+  - secure: cMB8eztpFBlSz4zMGUp5YTHbEXuD87/ecrUBhP6jaw9PUQBZhCAo8PTrWcWCKC4Lyr9SYnhWYKZbI3C3ML+wlrr9NOVDm3pgJVu+lmu5Ld/pwKULDnf3riyiddUJ3EqNUJFS7zYUQMjtrf2DcjnlZR/BRxVX8HF0JTJjumg3GcqsHF6h6AW0WsxIeLsU3Ij8GhcR4eYAIxNugozTGfC1J7uYReB/cFInHDB1+2pR27R/v/A6yEUrNr68v9a3ua7NAJzdC0bMQNFjCemfcO+B588x2vlPh+tIhr2N9KulZ9dVA6uQuryjP0TYCwHYBsdG9wdz7nR6/Gn76COAO6vXAlcCYJ5grmDM+zMOlyVGnaT8+g72cuF4o80df/IhhfEbh3C8sbFYCSczKAmH5H6MwjzjxqdcA2lGpkbGD2x6SpzNPPhdZLhFQXR2/t84ojuMXxzRHKRIH+fui7AfK4+rp/s1iTZWK4yJEhEudVzuxBOul6oRd/WgKLGR5U596IV4mjMpRPPch82PvrZVIrrGFbJLnfB/Zwe8vQAXNo3R8AuhB6WzUTZL20d/drdoM8tZJn1nTSVPz3tnd9GENOZEiHWJOpMqpZqxee02sRSF00JhY4KGUTY/NtvMSwiQ2sMhlzUVrEvJmHFjKIYDHjFHz4rL/vwArhSmDimMawCouTI=
+  - secure: KvZ+ai0sfFlilcxNeVBZRF9tfcryQwS7qbzCvGqk4EG9r6DBXL3J4Hl0N1Ybvk/odD1/Pj5iHyqKDmGQwNrFFrZwv+TGwe/z9l/yjx6MkVYbb5wPkj7GsqVVp3RSCb6UmJKw+xkBdwlLatGEVFTeAYFlG1ngHa5bHEhLKfP73miMWvxbU4Jffhdbr6FxYxFiYcOp1D5QMnTR3F41Wf1g/2+AMowjPPECVz3XfGVHwO+2pQBBFmcS3eTHrXVRkMp0EqvvVKdIAKbC9YKS08dr3qJMzdGpCzTn1BxJcr9IkCd2dT2aPifKpSzxS4oGK+XQojGS8vY944OFyjLhZ+f7mh5dkO2PPBbNfNVtsjBf1fHRH+tm1KFllDp2wXAkmk+9g/M/m6oV2YyRwshqCyZuZ9Get0Cj84d4XzpzD4akkeqDP1IAW5P3Ywq1B8fY6rXJ12nMfuM0yh1R++Lz9tFCCPx9MWigA/ayyRO0JL2c+U/gQ7nNKEd8n2IZG0OP0CQTgDnnHC/QEzk7iJlGA80gglA0NG83cHiRVkaRpKDsT4Ihd+2M5Z6ZyswceznMN3JILk136/tYieHPVDqBxNdST1m2colmBqSdUTxnc528OKr5sdS2NkPWSgKWVWb16PMgZ7uBNTkweHpNZ9tsHV9bdHCYId7myGjwNjdGoikJDM0=
