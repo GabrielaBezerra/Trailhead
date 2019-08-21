@@ -28,6 +28,7 @@ deploy:
   provider: pages
   skip-cleanup: true
   keep-history: true
+  github-token: $GITHUB_ACCESS_TOKEN
   local-dir: Documentation/Jazzy
   on:
     branch: feature/5_IntegrateJazzyWithGithubPages
