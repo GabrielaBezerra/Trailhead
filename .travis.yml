@@ -27,7 +27,6 @@ after_success:
 deploy:
   provider: pages
   skip-cleanup: true
-  keep-history: true
   github-token: $GITHUB_ACCESS_TOKEN
   local-dir: Documentation
   on:
