@@ -19,10 +19,13 @@ before_install:
 - carthage bootstrap --platform iOS --verbose --no-use-binaries --cache-builds
 
 after_success:
+  - set -x
   - bash <(curl -s https://codecov.io/bash)
   - gem install jazzy
-  - cd ../Documentation
+  - cd ..
+  - pwd
   - ./gendocs_jazzy.sh
+  - ls
 
 deploy:
   provider: pages
