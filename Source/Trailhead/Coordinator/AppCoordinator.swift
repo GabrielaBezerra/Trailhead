@@ -45,6 +45,7 @@ extension AppCoordinator: HomeNavigationDelegate {
 // Using separate functions to allow reuse and single place to handle all dependency injection
 // Otherwise would just use xyzViewController.instantiate()
 extension AppCoordinator {
+    /// Instantiate, inject, and move to the home view controller
     func moveToHomeViewController() {
         let homeViewController = HomeViewController.instantiate()
         homeViewController.navigationDelegate = self
@@ -52,6 +53,6 @@ extension AppCoordinator {
         dependencyManager.inject(homeViewController)
         dependencyManager.inject(homeViewController.homeViewModel)
 
-        moveToScreen(homeViewController, showNavigationBar: false)
+        moveToScreen(homeViewController)
     }
 }

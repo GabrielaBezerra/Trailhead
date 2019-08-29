@@ -19,8 +19,15 @@ protocol HomeNavigationDelegate: class {
 }
 
 
-class HomeViewController: UIViewController, Storyboarded {
-    static var storyboardName: String { return "Main" } // Name for Storyboarded functionality
+/// Home View Controller for the app
+class HomeViewController: UIViewController, Storyboarded, Coordinatable {
+    // Coordinatable:
+    let showsNavigationBar = false
+    let popsOnDismiss = false
+    
+    // Storyboarded:
+    static var storyboardName: String { return "Main" }
+    
     weak var navigationDelegate: HomeNavigationDelegate?
 
     @IBOutlet weak var appStateLabel: UILabel!

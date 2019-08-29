@@ -19,10 +19,13 @@ import RxSwift
  AppStatus is a mix between persisted and ephemeral data.
  */
 
+/// Protocol to designate that a class needs AppStatus injected into it.
 protocol AppStatusInjectable: Injectable {
+    /// Property to be injected into the class adopting this protocol.
     var appStatus: AppStatus! { get set }
 }
 
+/// Ephemeral or non-application data
 class AppStatus {
     let appState = BehaviorRelay<AppState>(value: .initializing)
 

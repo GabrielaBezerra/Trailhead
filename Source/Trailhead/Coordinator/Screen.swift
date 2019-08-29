@@ -7,7 +7,8 @@ import UIKit
 /// Often used by Coordinators to represent next screen
 /// to move to after ending a coordinator via finished()
 enum Screen {
-    case onboarding
+    case onboarding // example
+    case login // example
     case home
 }
 
@@ -16,8 +17,9 @@ enum Screen {
 //    use that to go back and next. Enum may be a better option.
 
 // Also would be good to have declarative way to determine whether to show
-// NavigationBar or not.
+// NavigationBar or not. Currently this is within the view controller itself.
+// Also pop from navigatin controller or not.
 
-protocol NavBarHandler {
-    var showNavigationBar: Bool { get }
-}
+//protocol NavBarHandler {
+//    var showNavigationBar: Bool { get }
+//}

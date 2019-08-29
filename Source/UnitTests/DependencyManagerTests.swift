@@ -19,9 +19,8 @@ class DependencyManagerTests: XCTestCase {
     }
 
     func testDependencyManagerDefaultConstructor() {
-        let dependencyManager = DependencyManager()
-
         // Testing that the dependency manager constructor works
+        _ = DependencyManager()
     }
 
     func testDependencyManagerWithAppStatusMock() {

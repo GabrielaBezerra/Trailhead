@@ -8,8 +8,12 @@ import Foundation
 
 /// Provides the ability to define values as extension to this type.
 struct Localizable {
+    /// Contents of the struct
     fileprivate let contents: String
 
+    /// Ininitializer for Localizable
+    ///
+    /// - Parameter contents: contents for localization (see article referenced above)
     init(_ contents: String) {
         self.contents = contents
     }
