@@ -7,8 +7,11 @@ import UIKit
 /// Often used by Coordinators to represent next screen
 /// to move to after ending a coordinator via finished()
 enum Screen {
+    /// Onboarding flow
     case onboarding // example
+    /// Login flow
     case login // example
+    /// Home screen
     case home
 }
 

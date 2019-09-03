@@ -9,6 +9,7 @@ import Foundation
 /// NOTE: This should only get used by Coordinators. If another class is
 ///   conforming to this, most likely something is not designed properly.
 protocol DependencyManagerInjectable {
+    /// Property to be injected into the class adopting this protocol.
     var dependencyManager: DependencyManager! { get set }
 }
 
@@ -27,7 +28,15 @@ final class DependencyManager {
     // View Models should be instantiated by their view controller in most
     // cases. Then dependency manager will be called on the viewmodel to
     // inject dependencies into it.
+    /// App Status example class
+    ///
+    /// Reference type is currently preferred as the object will be instantiated
+    /// in this class then passed into classes that need it.
     fileprivate var appStatus: AppStatus!
+    /// App Data example class
+    ///
+    /// Reference type is currently preferred as the object will be instantiated
+    /// in this class then passed into classes that need it.
     fileprivate var appData: AppData!
 
 

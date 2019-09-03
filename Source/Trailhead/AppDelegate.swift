@@ -4,10 +4,17 @@
 
 import UIKit
 
+/// :nodoc:
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    /// Top level App Coordinator
+    ///
+    /// Reference held here so top level coordinator stays in memory.
     var appCoordinator: AppCoordinator?
+    /// Base window for the application
+    ///
+    /// Reference held here so that it stays in memory
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

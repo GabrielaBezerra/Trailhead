@@ -27,6 +27,7 @@ protocol AppStatusInjectable: Injectable {
 
 /// Ephemeral or non-application data
 class AppStatus {
+    /// State of the app
     let appState = BehaviorRelay<AppState>(value: .initializing)
 
     /// Placeholder data item to simulate a situation where

@@ -28,17 +28,27 @@ class HomeViewController: UIViewController, Storyboarded, Coordinatable {
     // Storyboarded:
     static var storyboardName: String { return "Main" }
     
+    /// Delegate to notify of navigation events
     weak var navigationDelegate: HomeNavigationDelegate?
 
+    /// UI App State Label
     @IBOutlet weak var appStateLabel: UILabel!
+    /// UI EULA Accepted Label
     @IBOutlet weak var eulaAcceptedLabel: UILabel!
+    /// UI Accept Button
     @IBOutlet weak var acceptButton: UIButton!
+    /// UI Decline Button
     @IBOutlet weak var declineButton: UIButton!
     
+    /// View Model for this screen
     var homeViewModel = HomeViewModel() // DependencyManager will handle DI to VM.
+    /// Rx Disposebag to do "garbage collection"
     let disposeBag = DisposeBag()
 
     // MARK: - Lifecycle
+    /// View Did Load
+    ///
+    /// Trigger checks and initialize functionality here.
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -47,6 +57,7 @@ class HomeViewController: UIViewController, Storyboarded, Coordinatable {
     }
 
     // MARK: - ReactiveX
+    /// Perform all Rx setup (subscriptions, bind, drivers)
     private func setupRx() {
         homeViewModel.screenTitle
             .asDriver()
@@ -76,18 +87,20 @@ class HomeViewController: UIViewController, Storyboarded, Coordinatable {
     }
     
     // MARK: - IBActions
-    // Alternative to .rx.tap to handle button action
+    /// User tapped decline on EULA button
     @IBAction func declineEULA(_ sender: Any) {
-        // Alternative to rx drive for handling button action
+        // Alternative to rx drive / tap for handling button action
         homeViewModel.eulaAccepted(false)
     }
     
     
     // MARK: - UI helper functions
+    /// Perform UI initialization
     func initializeUI() {
     }
 
     // MARK: - Utility Functions
+    /// Check that all outlets and delegates have been set.
     func checkForNil() {
         assert(navigationDelegate != nil)
         assert(appStateLabel != nil)
