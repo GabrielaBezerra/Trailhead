@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		689DFA0A231480660000350D /* Coordinatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689DFA09231480660000350D /* Coordinatable.swift */; };
 		68FE1BF123073A5F00E947A2 /* Double+UtilitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FE1BF023073A5F00E947A2 /* Double+UtilitiesTests.swift */; };
 		68FE1BF323073F8400E947A2 /* Float+UtilitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FE1BF223073F8400E947A2 /* Float+UtilitiesTests.swift */; };
 		68FE1BF62307425A00E947A2 /* AppDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FE1BF52307425A00E947A2 /* AppDelegateTests.swift */; };
@@ -75,6 +76,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		689DFA09231480660000350D /* Coordinatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinatable.swift; sourceTree = "<group>"; };
 		68FE1BF023073A5F00E947A2 /* Double+UtilitiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+UtilitiesTests.swift"; sourceTree = "<group>"; };
 		68FE1BF223073F8400E947A2 /* Float+UtilitiesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Float+UtilitiesTests.swift"; sourceTree = "<group>"; };
 		68FE1BF52307425A00E947A2 /* AppDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateTests.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 				C9912F0E22AA39AA00A72643 /* AppCoordinator.swift */,
 				C9912F3B22AC1D3300A72643 /* Screen.swift */,
 				C9912F3F22AC962D00A72643 /* Storyboarded.swift */,
+				689DFA09231480660000350D /* Coordinatable.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -538,6 +541,7 @@
 				C9912F3822AC185300A72643 /* AppData.swift in Sources */,
 				C92EBF5F22D29ECC006CB02A /* Localizable.swift in Sources */,
 				C9912F4022AC962D00A72643 /* Storyboarded.swift in Sources */,
+				689DFA0A231480660000350D /* Coordinatable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -765,7 +769,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QR7Q963A94;
+				DEVELOPMENT_TEAM = JJWZ8LC3JN;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -790,7 +794,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QR7Q963A94;
+				DEVELOPMENT_TEAM = JJWZ8LC3JN;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -814,7 +818,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QR7Q963A94;
+				DEVELOPMENT_TEAM = JJWZ8LC3JN;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -838,7 +842,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QR7Q963A94;
+				DEVELOPMENT_TEAM = JJWZ8LC3JN;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

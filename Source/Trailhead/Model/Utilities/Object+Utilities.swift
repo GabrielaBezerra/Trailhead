@@ -6,10 +6,17 @@ import Realm
 import RealmSwift
 
 
+/// Encapsulation of common Realm errors
+///
+/// - realmReference: Error getting Realm reference
+/// - writeFailed: Realm write failed
 enum RealmError: LocalizedError {
+    /// Error getting realm reference
     case realmReference
+    /// Write failed during operation
     case writeFailed(String, Error)
 
+    /// String description of the enum case
     var errorDescription: String? {
         switch self {
         case .realmReference:
@@ -20,7 +27,7 @@ enum RealmError: LocalizedError {
     }
 }
 
-// Extension to base Realm Object class. Not to be confused with NSObject.
+/// Extension to base Realm Object class. Not to be confused with NSObject.
 extension Object {
     /// Write change to realm with (try-catch) error checking.
     ///

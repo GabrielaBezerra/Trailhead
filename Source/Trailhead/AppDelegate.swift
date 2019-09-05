@@ -4,13 +4,18 @@
 
 import UIKit
 
+/// :nodoc:
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    /// Top level App Coordinator
+    ///
+    /// Reference held here so top level coordinator stays in memory.
     var appCoordinator: AppCoordinator?
+    /// Base window for the application
+    ///
+    /// Reference held here so that it stays in memory
     var window: UIWindow?
-
-    let dependencyManager = DependencyManager()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -35,6 +40,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             assertionFailure("AppCoordinator not properly initialized.")
             return false
         }
+        
+        // Dependency manager can be a local variable as once it's passed into
+        // the AppCoordinator, it is no longer needed here. AppCoordinator will
+        // hold onto the reference.
+        let dependencyManager = DependencyManager()
         dependencyManager.inject(appCoordinator)
 
         appCoordinator.delegate = nil // AppCoordinator doesn't have anything to report.

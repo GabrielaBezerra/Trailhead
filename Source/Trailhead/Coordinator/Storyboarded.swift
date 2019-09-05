@@ -11,15 +11,16 @@ import UIKit
 ///
 /// Requires that the name in the storyboard match the name of the class.
 protocol Storyboarded {
+    /// Name of the storyboard as defined in the storyboard
     static var storyboardName: String { get }
 
+    /// UIViewController instantiate itself from storyboard, assuming storyboardName has been set properly
+    ///
+    /// - Returns: instantiated UIViewController
     static func instantiate() -> Self
 }
 
 extension Storyboarded where Self: UIViewController {
-    /// UIViewController instantiate itself from storyboard, assuming storyboardName has been set properly
-    ///
-    /// - Returns: instantiated UIViewController
     static func instantiate() -> Self {
         // Get name of ViewController class (i.e. MyApp.MyViewController)
         let fullName = NSStringFromClass(self)
