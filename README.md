@@ -8,7 +8,7 @@ Standardized iOS Architecture
 [![Two Blue Feet](https://img.shields.io/badge/2BF-Two%20Blue%20Feet-blue)](https://twobluefeet.com)
 
 ## Documentation
-Class Documentation is available on [Github Pages here](https://github.com/mattwhitlock/trailhead)
+Class Documentation is available on [Github Pages here](https://mattwhitlock.github.io/Trailhead/)
 
 ## Installation
 To prepare project for use, perform the following steps:  
