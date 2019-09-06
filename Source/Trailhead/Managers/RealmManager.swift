@@ -5,6 +5,11 @@
 import Foundation
 import RealmSwift
 
+/*
+The RealmManager class likely doesn't need init and copyForTesting.
+Leaving file here for later addition of default configuration that includes encryption.
+ // TODO: Add default configuration with encryption.
+
 /// Handling for Realm operations
 class RealmManager {
     /// Realm configuration
@@ -39,3 +44,4 @@ extension RealmManager {
         return RealmManager(withConfiguration: inMemoryConfig, setAsDefault: setAsDefault)
     }
 }
+*/

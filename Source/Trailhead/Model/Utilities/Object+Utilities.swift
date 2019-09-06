@@ -15,6 +15,8 @@ enum RealmError: LocalizedError {
     case realmReference
     /// Write failed during operation
     case writeFailed(String, Error)
+    /// Write failed as already in write transaction
+    case inWriteTransaction
 
     /// String description of the enum case
     var errorDescription: String? {
@@ -23,6 +25,8 @@ enum RealmError: LocalizedError {
             return "Error getting realm reference."
         case .writeFailed(let name, let error):
             return "Realm write(\(name)) failed with error \(error.localizedDescription)."
+        case .inWriteTransaction:
+            return "Realm write failed; already in write transaction."
         }
     }
 }
@@ -34,7 +38,7 @@ extension Object {
     /// - Parameters:
     ///   - name: Description of the action trying to accomplish
     ///   - action: updates to realm objects
-    /// - Returns: true if successful, false if not.
+    /// - Throws: RealmError if write failed or error getting Realm.
     func write(_ name: String, action: () -> Void) throws {
         // Write should be done from a managed object so it is part of a realm.
         //   If realm is nil, then it's not part of a realm.

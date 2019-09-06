@@ -10,6 +10,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      codeCoverageEnabled = "YES"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
@@ -19,6 +20,16 @@
                BlueprintIdentifier = "C9912F1E22AB346A00A72643"
                BuildableName = "IntegrationTests.xctest"
                BlueprintName = "IntegrationTests"
+               ReferencedContainer = "container:Trailhead.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C9912EF122AA35AF00A72643"
+               BuildableName = "UnitTests.xctest"
+               BlueprintName = "UnitTests"
                ReferencedContainer = "container:Trailhead.xcodeproj">
             </BuildableReference>
          </TestableReference>
