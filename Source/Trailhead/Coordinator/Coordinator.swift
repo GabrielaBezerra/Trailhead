@@ -17,12 +17,12 @@ import UIKit
 protocol Coordinator: AppStatusInjectable, AppDataInjectable {
     /// The active child coordinator if any.
     var childCoordinator: Coordinator? { get set }
-    
+
     /// Delegate for this coordinator.
     ///
     /// Typically the parent coordinator.
     var delegate: CoordinatorDelegate? { get set }
-    
+
     /// Reference to the navigation controller shared by the app and all coordinators.
     var navigationController: UINavigationController { get }
 
@@ -36,7 +36,7 @@ protocol Coordinator: AppStatusInjectable, AppDataInjectable {
     /// Typically called after setting the delegate on the coordinator
     /// and doing dependency injection.
     func start()
-    
+
     /// Finish this coordinator by doing any necessary cleanup.
     ///
     /// Typically called when the natural flow of the coordinator ends.
@@ -47,7 +47,7 @@ protocol Coordinator: AppStatusInjectable, AppDataInjectable {
 }
 
 /// CoordinatorDelegate protocol
-protocol CoordinatorDelegate {
+protocol CoordinatorDelegate: class {
     /// Designate to parent coordinator (usually) that flow has been finished
     ///
     /// - Parameters:
@@ -67,7 +67,7 @@ extension Coordinator {
             navigationController.popViewController(animated: false)
         }
     }
-    
+
     /// Moves to the specified view controller using the built-in navigation controller.
     ///
     /// - Parameters:

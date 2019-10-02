@@ -41,14 +41,14 @@ class DependencyManagerTests: XCTestCase {
 
     func testDependencyManagerInjectSelf() {
         /// Class only used for this test.
-        class testDependencyManagerClass: DependencyManagerInjectable {
+        class TestDependencyManagerClass: DependencyManagerInjectable {
             var dependencyManager: DependencyManager!
         }
-        
+
         let dependencyManager = DependencyManager()
-        let test = testDependencyManagerClass()
+        let test = TestDependencyManagerClass()
         dependencyManager.inject(test)
-        
+
         XCTAssert(test.dependencyManager === dependencyManager)
     }
 }

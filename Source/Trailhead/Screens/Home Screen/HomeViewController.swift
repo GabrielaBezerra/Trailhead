@@ -18,16 +18,15 @@ import UIKit
 protocol HomeNavigationDelegate: class {
 }
 
-
 /// Home View Controller for the app
 class HomeViewController: UIViewController, Storyboarded, Coordinatable {
     // Coordinatable:
     let showsNavigationBar = false
     let popsOnDismiss = false
-    
+
     // Storyboarded:
     static var storyboardName: String { return "Main" }
-    
+
     /// Delegate to notify of navigation events
     weak var navigationDelegate: HomeNavigationDelegate?
 
@@ -39,7 +38,7 @@ class HomeViewController: UIViewController, Storyboarded, Coordinatable {
     @IBOutlet weak var acceptButton: UIButton!
     /// UI Decline Button
     @IBOutlet weak var declineButton: UIButton!
-    
+
     /// View Model for this screen
     var homeViewModel = HomeViewModel() // DependencyManager will handle DI to VM.
     /// Rx Disposebag to do "garbage collection"
@@ -63,7 +62,7 @@ class HomeViewController: UIViewController, Storyboarded, Coordinatable {
             .asDriver()
             .drive(navigationItem.rx.title)
             .disposed(by: disposeBag)
-        
+
         // alternative to IBAction to handle button action
         acceptButton.rx.tap
             .asObservable()
@@ -71,12 +70,12 @@ class HomeViewController: UIViewController, Storyboarded, Coordinatable {
                 self?.homeViewModel.eulaAccepted(true)
             })
             .disposed(by: disposeBag)
-        
+
         homeViewModel.appStateText
             .asDriver()
             .drive(appStateLabel.rx.text)
             .disposed(by: disposeBag)
-        
+
         // Technically can reach through viewModel to get the
         // underlying objects, but don't do this.
         homeViewModel.appData.eulaAccepted
@@ -85,15 +84,14 @@ class HomeViewController: UIViewController, Storyboarded, Coordinatable {
             .drive(eulaAcceptedLabel.rx.text)
             .disposed(by: disposeBag)
     }
-    
+
     // MARK: - IBActions
     /// User tapped decline on EULA button
     @IBAction func declineEULA(_ sender: Any) {
         // Alternative to rx drive / tap for handling button action
         homeViewModel.eulaAccepted(false)
     }
-    
-    
+
     // MARK: - UI helper functions
     /// Perform UI initialization
     func initializeUI() {
@@ -109,4 +107,3 @@ class HomeViewController: UIViewController, Storyboarded, Coordinatable {
     // MARK: - Navigation
     // Use Coordinator for all navigation.
 }
-

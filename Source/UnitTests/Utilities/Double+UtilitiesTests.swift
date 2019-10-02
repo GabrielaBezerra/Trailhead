@@ -5,17 +5,17 @@
 import XCTest
 @testable import Trailhead
 
-class Double_UtilitiesTests: XCTestCase {
+class DoubleUtilitiesTests: XCTestCase {
     func testWithin() {
         XCTAssertTrue(0.5.within(0.5, of: 1.0))
         XCTAssertFalse(0.5.within(0.4999, of: 1.0))
-        
+
         XCTAssertTrue(1.5.within(0.5, of: 1.0))
         XCTAssertFalse(1.5.within(0.4999, of: 1.0))
-        
+
         XCTAssertFalse(0.5.within(0.0, of: 0.5))
     }
-    
+
     func testRoundTo1() {
         XCTAssertTrue(0.5.toNearest(1.0).within(1e-3, of: 1.0))
         XCTAssertTrue(1.5.toNearest(1.0).within(1e-3, of: 2.0))

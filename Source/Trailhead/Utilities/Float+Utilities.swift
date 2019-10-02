@@ -11,7 +11,7 @@ extension Float {
     func toNearest(_ interval: Float) -> Float {
         return (self / interval).rounded() * interval
     }
-    
+
     /// Test for equality within tolerance
     ///
     /// - Parameters:
@@ -22,5 +22,5 @@ extension Float {
         if tolerance <= 1e-10 { return false }
         return abs(self - value) <= tolerance
     }
-    
+
 }

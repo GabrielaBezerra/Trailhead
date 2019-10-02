@@ -21,7 +21,8 @@ struct Localizable {
 
 /// Extension to String (via Localizable struct) allowing simple localization.
 extension String {
-    /// A string initialized by using format as a template into which values in argList are substituted according the current locale information.
+    /// A string initialized by using format as a template into which values in argList are
+    /// substituted according the current locale information.
     private static var vaListHandler: (_ key: String, _ arguments: CVaListPointer, _ locale: Locale?) -> String {
         // https://stackoverflow.com/questions/42428504/swift-3-issue-with-cvararg-being-passed-multiple-times
         return { return NSString(format: $0, locale: $2, arguments: $1) as String }
@@ -32,7 +33,8 @@ extension String {
         return key.contents
     }
 
-    /// Returns a string created by using a given format string as a template into which the remaining argument values are substituted.
+    /// Returns a string created by using a given format string as a template into
+    /// which the remaining argument values are substituted.
     /// Equivalent to `String(format: value)`.
     static func localizedFormat(_ key: Localizable, _ arguments: CVarArg...) -> String {
         return withVaList(arguments) { vaListHandler(key.contents, $0, nil) } as String

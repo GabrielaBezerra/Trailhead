@@ -5,17 +5,17 @@
 import XCTest
 @testable import Trailhead
 
-class Float_UtilitiesTests: XCTestCase {
+class FloatUtilitiesTests: XCTestCase {
     func testWithin() {
         XCTAssertTrue(Float(0.5).within(0.5, of: 1.0))
         XCTAssertFalse(Float(0.5).within(0.4999, of: 1.0))
-        
+
         XCTAssertTrue(Float(1.5).within(0.5, of: 1.0))
         XCTAssertFalse(Float(1.5).within(0.4999, of: 1.0))
-        
+
         XCTAssertFalse(Float(0.5).within(0.0, of: 0.5))
     }
-    
+
     func testRoundTo1() {
         XCTAssertTrue(Float(0.5).toNearest(1.0).within(1e-3, of: 1.0))
         XCTAssertTrue(Float(1.5).toNearest(1.0).within(1e-3, of: 2.0))

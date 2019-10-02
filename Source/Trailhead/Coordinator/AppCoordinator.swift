@@ -6,8 +6,8 @@ import UIKit
 
 /// Implements `Coordinator` protocol and is responsible for the overall app coordinator functionality.
 class AppCoordinator: Coordinator, AppStatusInjectable, AppDataInjectable, DependencyManagerInjectable {
-    var childCoordinator: Coordinator? = nil
-    var delegate: CoordinatorDelegate? = nil
+    var childCoordinator: Coordinator?
+    weak var delegate: CoordinatorDelegate?
     let navigationController: UINavigationController
 
     var appStatus: AppStatus! = nil
@@ -34,7 +34,6 @@ class AppCoordinator: Coordinator, AppStatusInjectable, AppDataInjectable, Depen
         childCoordinator = nil
     }
 }
-
 
 // MARK: - Handle view controller delegates
 extension AppCoordinator: HomeNavigationDelegate {

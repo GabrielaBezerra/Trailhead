@@ -39,7 +39,6 @@ final class DependencyManager {
     /// in this class then passed into classes that need it.
     fileprivate var appData: AppData!
 
-
     /// Initialize the dependency manager (one per app)
     ///
     /// Parameters are intended to allow injection into the dependency manager
@@ -50,9 +49,9 @@ final class DependencyManager {
     ///   - appData: appData to use, otherwise AppData()
     init(appStatus: AppStatus? = nil,
          // This is only for testing. Consider moving it to test target.
-        // But, have to expose fileprivate properties. Probably better
-        // to be left here.
-        appData: AppData? = nil) {
+         // But, have to expose fileprivate properties. Probably better
+         // to be left here.
+         appData: AppData? = nil) {
         // Use default constructors if not provided values.
         self.appStatus = appStatus ?? AppStatus()
         self.appData = appData ?? AppData()
@@ -84,4 +83,3 @@ final class DependencyManager {
         }
     }
 }
-

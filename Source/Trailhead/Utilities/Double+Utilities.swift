@@ -11,7 +11,7 @@ extension Double {
     func toNearest(_ interval: Double) -> Double {
         return (self / interval).rounded() * interval
     }
-    
+
     /// Test for equality within tolerance
     ///
     /// - Parameters:
@@ -22,5 +22,5 @@ extension Double {
         if tolerance <= 1e-10 { return false }
         return abs(self - value) <= tolerance
     }
-    
+
 }

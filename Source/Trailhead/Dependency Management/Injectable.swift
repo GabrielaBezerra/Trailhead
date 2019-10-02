@@ -12,7 +12,7 @@ protocol Injectable {
     ///
     /// Typically used to ensure delegate and IBOutlets are set.
     func checkForNil()
-    
+
     /// "Lifecycle" event on an injectable object called by the DependencyManager when injection is done.
     func injectionDone() // Have to leave this here or cannot override default implementation.
 }

@@ -5,7 +5,6 @@
 import Realm
 import RealmSwift
 
-
 /// Encapsulation of common Realm errors
 ///
 /// - realmReference: Error getting Realm reference

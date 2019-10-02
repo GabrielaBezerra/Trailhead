@@ -14,7 +14,7 @@ enum AppState: CustomStringConvertible {
     case ready
     /// Application is scanning for devices
     case scanning
-    
+
     /// Clean representation of the state
     var description: String {
         switch self {

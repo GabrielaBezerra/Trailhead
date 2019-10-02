@@ -9,7 +9,7 @@ protocol Coordinatable where Self: UIViewController {
     ///
     /// Detail screens that need a back button should be set to true.
     var showsNavigationBar: Bool { get }
-    
+
     /// Whether to pop the screen off the navigation stack when moving away from it.
     ///
     /// Screens that are part of the main interaction of app generally should be false.
